@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from "react-router-dom";
 import brandImg from '../../images/quizy.png';
 import './NaVBar.css'
 function NavBar() {
@@ -12,9 +12,18 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="home">Home</Nav.Link>
-            <Nav.Link href="topics">Topic</Nav.Link>
-            <Nav.Link href="pricing">Pricing</Nav.Link>    
+            <NavLink to="home"
+                    className = {({ isActive }) =>
+                        isActive ? "text-dark" : "text-light"
+                      }>Home</NavLink>
+            <NavLink to="topics"
+            className = {({ isActive }) =>
+            isActive ? "text-dark" : "text-light"
+          }>Topic</NavLink>
+            <NavLink to="blog"
+            className = {({ isActive }) =>
+            isActive ? "text-dark" : "text-light"
+          }>Blog</NavLink>    
           </Nav>
         </Navbar.Collapse>
       </Container>

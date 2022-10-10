@@ -15,5 +15,5 @@ const Error = () => {
         </div>
     );
 };
-
+/******THIS DESIGN WAS TAKEN FROM COLORLIB*******/ 
 export default Error;

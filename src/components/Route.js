@@ -6,6 +6,7 @@ import {
 
   } from "react-router-dom";
 import Main from './layout/Main.jsx';
+import Home from './Home/Home.jsx';
 const Route = () => {
     const router = createBrowserRouter([
         {
@@ -13,16 +14,20 @@ const Route = () => {
             element:<Main></Main>,
             children:[
                 {
+                    path:'/',
+                    element:<Home></Home>
+                },
+                {
                     path:'home',
-                    element:<div>Home</div>
+                    element:<Home></Home>
                 },
                 {
                     path: 'topics',
                     element:<div>In topic</div>
                 },
                 {
-                    path:'pricing',
-                    element:<div>I am in pricing</div>
+                    path:'blog',
+                    element:<div>I am in blog</div>
                 }
             ],
             errorElement:<Error></Error>
