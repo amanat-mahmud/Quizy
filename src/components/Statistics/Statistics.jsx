@@ -23,6 +23,7 @@ const Statistics = () => {
                 <Tooltip />
             </LineChart>
             </ResponsiveContainer>
+            <p className='text-center mt-3'>Quiz-Topic graph</p>
         </div>
     );
 };
