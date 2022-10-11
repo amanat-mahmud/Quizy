@@ -27,9 +27,9 @@ const Route = () => {
                 },
                 {
                     path:'topic/:id',
-                    element:<Quiz></Quiz>,
-                    loader:({param})=>fetch(`https://openapi.programming-hero.com/api/quiz/${param.id}`),
-                    
+                    loader:async({param})=>
+                    {return fetch(`https://openapi.programming-hero.com/api/quiz/1`)},
+                    element:<Quiz></Quiz>
                 },
                 {
                     path: 'statistics',
@@ -41,12 +41,10 @@ const Route = () => {
                 }
             ],
             errorElement:<Error></Error>
-        }
-    ])
+        }]);
     return (
         <div>
             <RouterProvider router={router}>
-
             </RouterProvider>
         </div>
     );
