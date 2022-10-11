@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <img src={banner} alt="" className='w-100'/>
-            <div className='mt-5 ms-5 row row-col-1 row-cols-sm-2 row-cols-md-3 gy-4'>
+            <div className='mt-5 mx-auto row row-col-1 row-cols-sm-2  gy-4'>
             {
                 topics.map(topic=> <Topic key={topic.id}
                 topic={topic}

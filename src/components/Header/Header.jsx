@@ -12,14 +12,14 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
-            <NavLink to="home"
+            <NavLink to="topic"
                     className = {({ isActive }) =>
                         isActive ? "text-dark" : "text-light"
-                      }>Home</NavLink>
-            <NavLink to="topics"
+                      }>Topic</NavLink>
+            <NavLink to="statistics"
             className = {({ isActive }) =>
             isActive ? "text-dark" : "text-light"
-          }>Topic</NavLink>
+          }>Statistics</NavLink>
             <NavLink to="blog"
             className = {({ isActive }) =>
             isActive ? "text-dark" : "text-light"
