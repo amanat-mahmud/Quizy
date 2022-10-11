@@ -3,8 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from "react-router-dom";
 import brandImg from '../../images/quizy.png';
-import './NaVBar.css'
-function NavBar() {
+import './Header.css'
+function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
@@ -31,4 +31,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;

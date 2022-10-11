@@ -12,6 +12,7 @@ const Route = () => {
         {
             path:'/',
             element:<Main></Main>,
+            loader:()=> {return fetch("https://openapi.programming-hero.com/api/quiz")},
             children:[
                 {
                     path:'/',
