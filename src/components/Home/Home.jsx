@@ -1,17 +1,22 @@
 import React, { useContext } from 'react';
 import banner from '../../images/quizyBanner.png'
 import { TopicsContext } from '../layout/Main';
+import Topic from '../Topic/Topic';
 const Home = () => {
     // const topics = useLoaderData();
     // console.log(topics);
-    const test = useContext(TopicsContext);
-    console.log(test);
+    const topics = useContext(TopicsContext);
+    console.log(topics);
     return (
         <div>
             <img src={banner} alt="" className='w-100'/>
+            <div className='mt-5 ms-5 row row-col-1 row-cols-sm-2 row-cols-md-3 gy-4'>
             {
-                
+                topics.map(topic=> <Topic key={topic.id}
+                topic={topic}
+                ></Topic>)
             }
+            </div>
         </div>
     );
 };
