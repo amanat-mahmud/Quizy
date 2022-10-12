@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { RightAnsContext } from '../Questions/Questions';
+import { RightAnsContext, WrongAnsContext } from '../Questions/Questions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faEye } from '@fortawesome/free-solid-svg-icons'
 const Question = ({ ques, name }) => {
-    console.log(ques);
-    // let RightAns = useContext(RightAnsContext);
+    // console.log(ques);
+    const [rightAns,setRightAns] = useContext(RightAnsContext);
+    const [wrongAns,setWrongAns] = useContext(WrongAnsContext);
     // const questions = ques.question;
     // const test = questions.split('<');
     const [isDisabled,setIsDisabled] = useState(false);
@@ -14,16 +15,18 @@ const Question = ({ ques, name }) => {
     const handleClick =(choseen) =>{
         if(ques.correctAnswer===choseen){
             toast.success("Correct answer!!!", {autoClose:1000});
-            corAns=corAns+1;
+            // corAns=corAns+1;
+            setRightAns(rightAns+1)
         }
         else{
             toast.error("Wrong answer",{autoClose:1000});
-            wrngAns=wrngAns+1;
+            // wrngAns=wrngAns+1;
+            setWrongAns(wrongAns+1);
         }
         setIsDisabled(!isDisabled);
     }
     const showAns = ()=>{
-        toast.info(`Correct answer is :${ques.correctAnswer}`,{autoClose:1000})
+        toast.info(`Correct answer is: ${ques.correctAnswer}`,{autoClose:1000});
         // alert(`Correct answer is :${ques.correctAnswer}`);
     }
     return (
@@ -75,9 +78,7 @@ const Question = ({ ques, name }) => {
                             </div>: <div></div>
                     }
                 </div>
-
-            }
-            
+            }           
         </div>
     );
 };
