@@ -11,7 +11,6 @@ const Question = ({ ques, name }) => {
     // const questions = ques.question;
     // const test = questions.split('<');
     const [isDisabled,setIsDisabled] = useState(false);
-    let corAns, wrngAns = 0;
     const handleClick =(choseen) =>{
         if(ques.correctAnswer===choseen){
             toast.success("Correct answer!!!", {autoClose:1000});

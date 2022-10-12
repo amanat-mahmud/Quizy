@@ -27,8 +27,10 @@ const Route = () => {
                 },
                 {
                     path:'topic/:id',
-                    loader:async({param})=>
-                    {return fetch(`https://openapi.programming-hero.com/api/quiz/1`)},
+                    loader:async({params})=>
+                    {
+                        console.log(params.id)
+                        return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`)},
                     element:<Quiz></Quiz>
                 },
                 {
